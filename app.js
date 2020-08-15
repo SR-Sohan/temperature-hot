@@ -26,7 +26,7 @@
 // Api key
 function getApi(value){
     //fetch(`${key.baseUrl}?q=${value}&appid=${key.api}`)
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${value}&appid=0f72b3ff8b96376d97c11cf2f9b7ef1c&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=0f72b3ff8b96376d97c11cf2f9b7ef1c&units=metric`)
     .then(response => response.json())
     .then(data => {
         displayShow(data);
@@ -48,6 +48,6 @@ function displayShow(data){
 
     const icon = document.getElementById('icon');
     const showIcon = data.weather[0].icon;
-    var displayIcon = "http://openweathermap.org/img/wn/" + showIcon+'@2x' + ".png";
+    var displayIcon = "https://openweathermap.org/img/wn/" + showIcon+'@2x' + ".png";
     icon.setAttribute('src',displayIcon)
 }
